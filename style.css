@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(211, 208, 208);
+    width: 100vm;
+}
+
+header {
+    background: rgb(2, 62, 62);
+    padding: 20px;
+    color: white;
+}
+header h1 {
+    font-size: 36px;
+}
+
+main {
+    height: 80vh;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main form {
+    display: flex;
+    justify-content: center;
+}
+
+form input[type="text"] , button[type="submit"] , .result div a{
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 10PX;
+}
+
+form input[type="text"] {
+    flex-grow: 1;
+}
+
+form button[type="submit"], .result div a {
+    background: rgb(2, 62, 62);
+    color: rgb(211, 208, 208);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.result {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.2);
+}
+
+.result p {
+    margin-top: 10px;
+}
+
+.result div {
+    margin-top: 20px;
+}
+
+.result div a{
+    text-decoration: none;
+    margin-left: 0;
+    font-size: 15px;
+}
+
+.result li {
+    margin-left: 30px;
+}
+
+@media (max-width: 400px) {
+    main form {
+        flex-direction: column;
+    }
+    form button[type="submit"]  {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}
+
