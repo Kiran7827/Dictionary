@@ -2,13 +2,18 @@ const form = document.querySelector("form");
 const result = document.querySelector(".result");
 
 
+//add eventListener
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     getWordInfo(form.elements[0].value)
 })
 
+
 const getWordInfo = async (word) => {
+
+    //fetching data from API
 
     try {
         result.innerHTML = "Fetching Data...."
@@ -19,6 +24,8 @@ const getWordInfo = async (word) => {
 
     console.log(data);
 
+    //getting data from API
+
     result.innerHTML = 
     `<h2><strong>Word:</strong> ${data[0].word}</h2>
 
@@ -27,6 +34,8 @@ const getWordInfo = async (word) => {
     <p><strong>Definition:</strong> ${data[0].meanings[0].definitions[0].definition === undefined ? "Not Found" : data[0].meanings[0].definitions[0].definition}</p>
     <p><strong>Synonyms:</strong></p>
     `;
+
+    //catching error
 
     if(data[0].meanings[0].synonyms.length === 0) {
         result.innerHTML += `<p>Not Found <p>`
